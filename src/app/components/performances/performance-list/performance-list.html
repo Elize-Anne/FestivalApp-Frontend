@@ -1,0 +1,8 @@
+<ul>
+  @for ( performance of Performances$ | async; track performance.id) {
+    <li>
+      {{ performance.title }} - {{ performance.description }} - {{performance.date}} --{{performance.performanceLocation}}
+    </li>
+  }
+</ul>
+

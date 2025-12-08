@@ -1,0 +1,7 @@
+<ul>
+  @for ( dj of DJs$ | async; track dj.id) {
+    <li>
+      {{ dj.name }} - {{ dj.genre }} - {{dj.biography}}
+    </li>
+  }
+</ul>
