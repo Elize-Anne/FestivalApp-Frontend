@@ -36,7 +36,7 @@ DJ$: Observable<DJ> = this.route.paramMap.pipe(
 
 
 }
-
+//test
 
 
 
