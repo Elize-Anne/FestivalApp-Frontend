@@ -1,1 +1,6 @@
-<p>performance-details works!</p>
+
+<div class="performance-details-container">
+  @if (Performances$ | async; as performance) {
+
+    {{ performance.title }} - {{ performance.description }} - {{performance.date }} - {{performance.performanceLocation}} - {{performance.dj.name}} }
+</div>

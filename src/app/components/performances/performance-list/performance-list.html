@@ -1,8 +1,32 @@
-<ul>
-  @for ( performance of Performances$ | async; track performance.id) {
-    <li>
-      {{ performance.title }} - {{ performance.description }} - {{performance.date}} --{{performance.performanceLocation}}
-    </li>
-  }
-</ul>
+<!--<ul>-->
+<!--  @for ( performance of Performances$ | async; track performance.id) {-->
+<!--    <li>-->
+<!--      {{ performance.title }} - {{ performance.description }} - {{performance.date}} &#45;&#45;{{performance.performanceLocation}}-->
+<!--    </li>-->
+<!--  }-->
+<!--</ul>-->
+
+@for ( performance of Performances$ | async; track performance.id) {
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{performance.title}}</mat-card-title>
+        <mat-card-subtitle>{{ performance.description }}</mat-card-subtitle>
+        <img mat-card-sm-image
+             [src]="performance.avatar || ('/assets/P' + performance.id + '.jpg')"
+             [alt]="performance.name || 'Performance image'"
+             style="width:200px; height:300px; object-fit:cover;">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      {{performance.date }} - {{performance.performanceLocation}} - {{performance.dj.name}}
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/performances/details/', performance.id]">Details</button>
+    </mat-card-actions>
+  </mat-card>
+
+}
 

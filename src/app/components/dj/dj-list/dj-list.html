@@ -1,7 +1,22 @@
-<ul>
   @for ( dj of DJs$ | async; track dj.id) {
-    <li>
-      {{ dj.name }} - {{ dj.genre }} - {{dj.biography}}
-    </li>
+    <mat-card routerLink="/dj/details" class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{dj.name}}</mat-card-title>
+          <mat-card-subtitle>{{ dj.genre }}</mat-card-subtitle>
+          <img mat-card-sm-image
+               [src]="dj.avatar || ('/assets/' + dj.id + '.png')"
+               [alt]="dj.name || 'DJ image'"
+               style="width:200px; height:300px; object-fit:cover;">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        {{dj.biography | slice:50 }}...
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/dj/details', dj.id]">Details</button>
+      </mat-card-actions>
+    </mat-card>
+
   }
-</ul>

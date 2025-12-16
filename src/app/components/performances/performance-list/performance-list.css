@@ -1,0 +1,53 @@
+/* performance-list.css */
+
+.performance-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+/* Card sizing and spacing */
+.example-card {
+  width: 720px; /* card total width */
+  cursor: pointer;
+}
+
+/* Layout header as flex so image and title sit side-by-side */
+.example-card mat-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Target the image inserted with the mat-card image attribute */
+img[mat-card-sm-image] {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;    /* crop to fill without distortion */
+  flex: 0 0 200px;      /* keep fixed width in flex layout */
+  display: block;
+  border-radius: 4px;
+  margin: 0;             /* spacing handled by gap on header */
+}
+
+/* Make titles wrap nicely next to the image */
+.example-card mat-card-title-group {
+  flex: 1 1 auto;
+  min-width: 0; /* allow text to truncate/wrap inside flex */
+}
+
+/* Responsive: smaller cards & images on small screens */
+@media (max-width: 600px) {
+  .example-card {
+    width: 100%;
+  }
+  img[mat-card-sm-image] {
+    width: 120px;
+    height: 180px;
+    flex: 0 0 120px;
+  }
+}

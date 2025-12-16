@@ -1,1 +1,79 @@
-<p>dj-details works!</p>
+
+<!--<p>DJ details works!</p>-->
+<!--<ul>-->
+<!--  @for ( performance of DJ$ | async; track dj.id) {-->
+<!--    <li>-->
+<!--      {{ performance.title }} - {{ performance.description }} - {{performance.date}} &#45;&#45;{{performance.performanceLocation}}-->
+<!--    </li>-->
+<!--  }-->
+<!--</ul>-->
+
+<!--@if (post$ | async; as post) {-->
+<!--  <p>DJ has arrived!</p>-->
+<!--} @else {-->
+<!--  <p>Loading DJ…</p>-->
+<!--}-->
+
+
+<!--&lt;!&ndash; dj-details.html &ndash;&gt;-->
+<!--<div class="dj-details-container">-->
+<!--  @if (DJs$ | async; as dj) {-->
+
+<!--      &lt;!&ndash; Per-DJ custom content &ndash;&gt;-->
+<!--      @switch (dj.id) {-->
+
+<!--        @case (1) {-->
+<!--          <section class="dj-custom">-->
+<!--            <h2>DJ Alpha</h2>-->
+
+<!--            <p>{{ dj.biography }}</p>-->
+
+<!--      </section>-->
+<!--        }-->
+<!--&lt;!&ndash;//hoe ID aan biography??? en url&ndash;&gt;-->
+<!--    @case (2) {-->
+<!--      <section class="dj-custom">-->
+<!--        <h2>DJ Alpha</h2>-->
+<!--        <p>{{ dj.biography }}</p>-->
+
+<!--      </section>-->
+<!--    }-->
+<!--      @case (3) {-->
+<!--        <section class="dj-custom">-->
+<!--          <h2>DJ Alpha</h2>-->
+<!--          <p>{{ dj.biography }}</p>-->
+
+<!--        </section>-->
+<!--      }-->
+<!--      @case (4) {-->
+<!--          <section class="dj-custom">-->
+<!--            <h2>DJ Alpha</h2>-->
+<!--            <p>{{ dj.biography }}</p>-->
+
+<!--          </section>-->
+<!--      }-->
+<!--      @case (5) {-->
+<!--            <section class="dj-custom">-->
+<!--              <h2>DJ Alpha</h2>-->
+<!--              <p>{{ dj.biography }}</p>-->
+
+<!--            </section>-->
+<!--&lt;!&ndash;        //@Default&ndash;&gt;-->
+<!--  }}}-->
+
+
+<!--&lt;!&ndash;  } @else {&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; Not found &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="not-found">Sorry, we couldn’t find this DJ. Please check the URL or try again later.</div>&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;  } @else {&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; Loading &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="loading">Loading DJ details…</div>&ndash;&gt;-->
+
+
+
+<!-- dj-details.html -->
+<div class="dj-details-container">
+  @if (DJ$ | async; as dj) {
+
+        {{ dj.name }} - {{ dj.genre }} - {{ dj.biography }} }
